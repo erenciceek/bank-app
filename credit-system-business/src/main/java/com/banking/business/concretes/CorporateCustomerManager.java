@@ -5,8 +5,11 @@ import com.banking.business.dtos.requests.CreateCorporateCustomerRequest;
 import com.banking.business.dtos.responses.CorporateCustomerResponse;
 import com.banking.business.mappings.CorporateCustomerMapper;
 import com.banking.business.rules.CorporateCustomerBusinessRules;
+import com.banking.core.utils.results.PageDataResponse;
+import com.banking.entities.Customer;
 import com.banking.repositories.abstracts.CorporateCustomerRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,8 +36,14 @@ public class CorporateCustomerManager implements CorporateCustomerService {
     }
 
     @Override
+    public PageDataResponse<CorporateCustomerResponse> getAllPaged(Pageable pageable) {
+        return null;
+    }
+
+    @Override
     public CorporateCustomerResponse getByTaxNumber(String taxNumber) {
         var customer = repository.findByTaxNumber(taxNumber);
         return mapper.mapToCorporateCustomerResponse(customer);
     }
+
 } 

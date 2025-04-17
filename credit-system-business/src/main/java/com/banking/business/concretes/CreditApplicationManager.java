@@ -2,6 +2,7 @@ package com.banking.business.concretes;
 
 import java.util.List;
 
+import com.banking.business.abstracts.CustomerService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -37,18 +38,20 @@ public class CreditApplicationManager implements CreditApplicationService {
     @Override
     @Transactional
     public CreditApplicationResponse apply(CreateCreditApplicationRequest request) {
-        // İş kuralları kontrolü
+
         rules.checkIfCustomerExists(request.getCustomerId());
         rules.checkIfCreditTypeExists(request.getCreditTypeId());
+
 
         Customer customer = customerRepository.findById(request.getCustomerId()).<Customer>orElseThrow();
         CreditType creditType = creditTypeRepository.findById(request.getCreditTypeId()).<CreditType>orElseThrow();
 
+        rules.checkIfCreditTypeIsActive(creditType);
         rules.checkIfCustomerCanApplyForCreditType(customer, creditType);
         rules.checkIfAmountInRange(request.getAmount(), creditType);
         rules.checkIfTermInRange(request.getTerm(), creditType);
 
-        // Kredi başvurusu oluşturma
+
         var application = new CreditApplication();
         application.setCustomer(customer);
         application.setCreditType(creditType);
@@ -56,7 +59,7 @@ public class CreditApplicationManager implements CreditApplicationService {
         application.setTerm(request.getTerm());
         application.setInterestRate(creditType.getBaseInterestRate());
 
-        // Ödeme hesaplama
+
         calculatePayments(application);
 
         application = applicationRepository.save(application);

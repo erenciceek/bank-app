@@ -38,9 +38,5 @@ public class CreditTypeBusinessRules {
         }
     }
 
-    public void checkIfCreditTypeIsActive(CreditType creditType) {
-        if (!creditType.isActive()) {
-            throw new RuntimeException("This credit type is not active: " + creditType.getName());
-        }
-    }
+
 } 

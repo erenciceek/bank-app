@@ -21,5 +21,6 @@ public class Messages {
         public static final String AMOUNT_OUT_OF_RANGE = "Credit amount is out of allowed range";
         public static final String TERM_OUT_OF_RANGE = "Credit term is out of allowed range";
         public static final String APPLICATION_CANNOT_BE_CANCELLED = "Credit application cannot be cancelled";
+        public static final String CREDIT_TYPE_NOT_ACTIVE = "Credit type is not active";
     }
 } 

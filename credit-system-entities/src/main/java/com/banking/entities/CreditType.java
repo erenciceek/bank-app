@@ -37,7 +37,6 @@ public abstract class CreditType extends BaseEntity<Long> {
     @Column(name = "base_interest_rate", nullable = false)
     private Double baseInterestRate;
 
-    @Column(nullable = false)
+    @Column(name = "active", nullable = false)
     private boolean active = true;
-
 } 

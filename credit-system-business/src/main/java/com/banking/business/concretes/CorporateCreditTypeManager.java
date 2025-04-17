@@ -2,6 +2,7 @@ package com.banking.business.concretes;
 
 import java.util.List;
 
+import com.banking.entities.CreditType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -77,4 +78,5 @@ public class CorporateCreditTypeManager implements CorporateCreditTypeService {
         creditType = repository.save(creditType);
         return mapper.mapToCorporateCreditTypeResponse(creditType);
     }
+
 } 

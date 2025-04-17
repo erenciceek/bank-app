@@ -12,5 +12,5 @@ public class CreditTypeResponse {
     private Integer minTerm;
     private Integer maxTerm;
     private Double baseInterestRate;
-    private Boolean isActive;
+    private Boolean active;
 } 

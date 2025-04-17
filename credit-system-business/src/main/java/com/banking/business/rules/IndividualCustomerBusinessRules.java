@@ -23,4 +23,5 @@ public class IndividualCustomerBusinessRules {
             throw new BusinessException(Messages.IndividualCustomer.INVALID_NATIONAL_IDENTITY_FORMAT);
         }
     }
+
 } 

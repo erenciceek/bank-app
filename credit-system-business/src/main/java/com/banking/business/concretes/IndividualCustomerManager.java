@@ -2,6 +2,8 @@ package com.banking.business.concretes;
 
 import java.util.List;
 
+import com.banking.core.crosscuttingconcerns.exceptions.types.BusinessException;
+import com.banking.entities.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -66,4 +68,5 @@ public class IndividualCustomerManager implements IndividualCustomerService {
             customerPage.isLast()
         );
     }
-} 
+
+}

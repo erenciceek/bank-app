@@ -67,4 +67,10 @@ public class CreditApplicationBusinessRules {
             throw new BusinessException(Messages.Credit.APPLICATION_CANNOT_BE_CANCELLED);
         }
     }
+
+    public void checkIfCreditTypeIsActive(CreditType creditType) {
+        if (!creditType.isActive()) {
+            throw new BusinessException(com.banking.core.constants.Messages.Credit.CREDIT_TYPE_NOT_ACTIVE);
+        }
+    }
 } 
