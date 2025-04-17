@@ -4,7 +4,7 @@ import org.springframework.data.domain.Pageable;
 
 import com.banking.business.dtos.responses.CustomerResponse;
 import com.banking.core.utils.results.PageDataResponse;
-import com.banking.entities.Customer;
+
 
 public interface CustomerService<T extends CustomerResponse> {
     T getByCustomerNumber(String customerNumber);

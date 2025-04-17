@@ -6,7 +6,6 @@ import com.banking.business.dtos.responses.CorporateCustomerResponse;
 import com.banking.business.mappings.CorporateCustomerMapper;
 import com.banking.business.rules.CorporateCustomerBusinessRules;
 import com.banking.core.utils.results.PageDataResponse;
-import com.banking.entities.Customer;
 import com.banking.repositories.abstracts.CorporateCustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;

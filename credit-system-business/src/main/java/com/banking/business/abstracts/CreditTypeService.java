@@ -1,6 +1,6 @@
 package com.banking.business.abstracts;
 
-import com.banking.entities.CreditType;
+
 import org.springframework.data.domain.Pageable;
 
 import com.banking.business.dtos.responses.CreditTypeResponse;
